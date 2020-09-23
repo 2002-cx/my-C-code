@@ -1,0 +1,56 @@
+//Hello world
+#include<stdio.h>
+	int main()
+{
+printf("hello world\n");			
+				return 0;
+}
+
+
+
+//两数相加
+#include<stdio.h>
+int main()
+{
+int a = 0
+int b = 0
+int sum = 0
+scanf_s("%d%d" ,&a ,&b);  //scanf-输入函数，加_s是为了防止安全错误报错。  &a,&b取向a&b的地址
+sum = a + b;
+printf("sum = %d",sum);
+return 0;
+}
+
+//打印字符A
+#include<stdio.h>
+int main()
+{
+char ch = 'A';
+printf("%c\n",ch);
+return 0;
+}
+
+
+//打印年龄Age20
+#include<stdio.h>
+int main()
+{
+int Age = 18;
+printf("%d\n",Age);
+return 0;
+}
+
+
+//计算数据类型字节
+#include<stdio.h>
+int main()
+{
+printf("%d\n",sizeof(char));  //1
+printf("%d\n",sizeof(int));  //2
+printf("%d\n",sizeof(short));  // 4
+printf("%d\n",sizeof(long));  // 4/8
+printf("%d\n",sizeof(long long));  //8
+printf("%d\n",sizeof(float));  //4	
+printf("%d\n",sizeof(double));  //8
+return 0;
+}
