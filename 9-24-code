@@ -1,0 +1,123 @@
+//常量
+//一:字面常量
+i、int main()
+{
+1;
+2;
+3.14;
+100;
+return 0;
+}
+
+//二：常变量 关键词-const
+#include<stdio.h>
+int main()
+{
+const int number = 22
+printf("%d\n",number);
+return 0;
+}
+
+//三：#define定义的常量
+#define Max 20
+#include<stdio.h>
+int main()
+{
+printf("%d\n" ,Max);
+return 0;
+}
+
+//四：枚举常量-关键词-enum
+enum SEX{
+FEMALE,
+MALE,
+RELECT
+};
+#incldude<stdio.h>
+int main()
+{
+printf("%d\n , MALE");
+printf("%d\n" , FEMALE);
+printf("%d\n" , RELECT);
+return 0;
+}
+
+
+//计算字符串与字符的长度
+//关键词-strlen  string-leng
+//对应头文件-#include<string>
+#include<string.h>
+#include<stdio.h>
+int main()
+{
+char arr1[] = "abc";
+char aar2[] = { ' a',  'b ' ,' c'};
+printf("%d\n",strlen(arr1));
+printf("%d\n",strlen(arr2));
+return 0;
+}
+
+
+//转义字符\ddd-八进制转换为十进制得到的ASCLL的值
+#include<stdio.h>
+int main()
+{
+printf("%c\n",'\132');
+return 0;
+}
+
+//选择语句
+#include<stdio.h>
+int main()
+{
+input = 0;
+printf("你有吃早饭的习惯吗？(yes or no)>:");
+scanf("%s" ,&input);
+if(input == yes)
+printf("你的身体是健康的。\n");
+else
+printf("你的身体很糟糕\n");
+return 0;
+}
+
+
+//while循环语句
+#include<stdio.h>
+int main()
+{
+int line = 0;
+printf("好好学习\n");
+while(line <30000)
+{
+printf("每天敲代码:%d\n" , line);
+line++
+}
+if(line>= 30000)
+printf("to geted some good offers\n");
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
