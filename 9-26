@@ -1,0 +1,58 @@
+//指针（存放地址） &（取地址符号）
+#include<stdio.h>
+int main()
+{
+int a = 10;
+int *b = &a;
+*b = 20;
+printf("a = %d\n" a,);  //a = 20
+return 0;
+}
+
+
+//结构体：关键词-struct-用于描述复杂变量
+#include<stdio.h>
+#include<string.h>
+struct Book
+{char name[20];
+short price;
+};      //;(不可省，用于描述struct结束的体系)
+int main()
+{
+struct Book b1 = {"沙海" ， 20};
+printf("%s\n",b1.name); //沙海
+printf("%d\n", b1.price); //20;
+struct Bool *pb = &b1;
+printf("%s\n" , (*bp).name); //结构体变量.成员（利用指针） 结果：沙海
+printf("%d\n" , (*bp).price); 结果：20
+printf("%s\n" ,bp->name);  //结构体指针->成员       结果：沙海
+printf("%d\n" ,bp->price);  //结果：20
+strcpy (b1.name ,"杀无赦")  /利用库函数-strcpy-string-copy改名，因为是利用库函数，所以要对应头文件#include<string.h>   结果：name由沙海改为，杀无赦
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
