@@ -1,0 +1,109 @@
+//判断一个数是否为奇数
+#include<stdio.h>
+int main()
+{
+	int i = 3;
+	if (i % 3 == 0)
+		printf("这是奇数\n");
+	else
+		printf("这是偶数\n");
+	return 0;
+}
+
+//求1--100的所有偶数
+#include<stdio.h>
+int main()
+{
+	int i = 1;
+	while (i <= 100)
+	{
+		if (i % 2 == 0)
+			printf("%d\n" , i);
+		i++;
+	};
+	return 0;
+}
+
+//避开if 语句，求1--100所有偶数
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	while (i < 100)
+	{
+		i += 2;
+		printf("%d\n" , i);
+	};
+	return 0;
+}
+
+
+
+//多分枝语句
+#include<stdio.h>
+int main()
+{
+	int age = 100;
+	if (age > 12 && age < 16)
+	{
+		printf("青少年\n");
+		printf("不应该谈恋爱\n");
+	}
+	else 
+	{
+		if (18 == age)
+			printf("成年人\n");
+		else if (age>30 && age < 50)
+			printf("中年人\n");
+		else if (age>60 && age < 100)
+			printf("老年人\n");
+		else
+			printf("祖宗\n");
+
+	}
+  return 0 ;
+  }
+
+//利用whitch,case,break来实现多分枝语句
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	int day = 0;
+	scanf("%d" ,&day);
+	switch(day)
+	{
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+		printf("今天是工作日\n");
+		break;
+	case 6:
+	case 7:
+		printf("今天是休息日\n");
+		break;
+	default:
+		printf("输入有误。\n");
+	};
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
