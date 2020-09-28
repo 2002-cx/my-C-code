@@ -1,0 +1,211 @@
+#define _CRT_SECURE_NO_WARNINGS
+//do
+//循环语句;
+//while (表达式)
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	do
+//	{
+//		printf("吃屎\n");
+//		i++;
+//	}
+//	while (i < 10);
+//	return 0;
+//}
+ 
+////continue;/break;
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 1;
+//	do
+//	{
+//		if(i == 5)
+//		break;
+//		printf("%d\n",i);
+//		i++;
+//	}
+//	while (i < 10);
+//	return 0;
+//}
+
+
+#define _CRT_SECURE_NO_WARNINGS
+//利用for循环，打印1-10
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1; i <= 10; i++)  //for 循环，把初始化，判断，调整合为一体
+//	{
+//		if (i == 10)         //for循环中，也可以用break;语句
+//			continue;        //for循环中,也可以用continue;语句
+//		printf("%d\n" ,i);
+//	}
+//	return 0;
+//}  //结果：1,2,3,4,6,7,8,9,10
+
+
+//while中的continue;语句会造成死循环，而for不会
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 1;
+//	while (i <= 10)
+//	{
+//		if (5 == i)
+//			continue;
+//		printf("%d\n" , i);
+//		i++;
+//	}
+//	return 0;
+//}       //结果1，2，3，4  后面就死循环了
+
+//for循环的初始化，判断，调整都可以被省略
+//但是：for循环的判断部分如果被省略，那判断条件就是；恒为真
+//#include<stdio.h>
+//int main()  
+//{
+//	int i = 0;
+//	for (;;) //死循环
+//	{
+//		printf("hehe");
+//	}
+//	return 0;
+//}
+////for 变种一
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (; i < 10; i++)
+//	{
+//		for (j=0; j < 10; j++)  //如果不熟练，不要随便省略初始化变量，否者结果可能不同
+//			printf("hehe\n");
+//	}
+//	return 0;
+//}
+  
+////for变种2,逗号表达式
+//#include<stdio.h>
+//int main()
+//{
+//	int x, y = 0 ;
+//	for (x = 0, y = 0; x < 2 && y < 5; x++, y++)
+//	{
+//		printf("hehe \n");
+//	}
+//	return 0;
+//}  
+
+//
+//#include<stdio.h>
+//int main()
+//{
+//
+//	int i, o = 0;
+//	for (i = 0, o = 0; i = 0; i++, o++)  //判断中为赋值i = 0，i = 0为假，所以一次也不执行
+//	{
+//		printf("123");
+//	}
+//		o++;
+//	return 0;
+//}
+
+
+#define _CRT_SECURE_NO_WARNINGS
+//int main()
+//{
+//	int i = 0;
+//	int n = 0;
+//	int ret = 1;
+//	printf("请输入一个值：");
+//	scanf("%d" , &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret = ret*i;
+//	}
+//	printf("ret = %d " ,ret);
+//	return 0;
+//}
+
+//1!~10!的和
+int main()
+{
+	int i = 0;
+	int n = 0;
+	int ret = 1;
+	int sum = 0;
+	for (n = 1; n < 10; n++)
+	{
+		ret = 1;
+		for (i = 1; i <= n; i++)
+		{
+			
+			ret = ret*i;
+			sum = sum + ret;
+		}
+	}
+	
+	printf("sum = %d", sum);
+	return 0;
+}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main()
+//{
+//	int ch = 0;        
+//	while ((ch = getchar()) != EOF)  //EOF-end-of-file：文件结束标志       getchar: （函数）输入       putchar:输出函数
+//	{
+//		putchar(ch);
+//	}
+//	return 0;
+//}
+
+////while循环的价值
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main()
+//{
+//	int ch = 0;
+//	int ret = 0;
+//	char password[20] = { 0 };
+//	printf("请输入密码:>");
+//	scanf("%s" , password); //输入密码，并存放在password中。scanf函数，只会获取空格之前的数据
+//	//缓冲区还剩余一个\n
+//	//读取一下\n
+//	//getchar();
+//	while ((ch = getchar())!= '\n')
+//	{
+//		;
+//	}
+//	printf("请确认(Y\N):>");
+//	ret = getchar();        //读取输入的Y/N
+//	if (ret == 'Y')
+//	{
+//		printf("确认成功\n");
+//	}
+//	else
+//	{
+//		printf("请重新输入密码：\n");
+//	}
+//	return 0;
+//}
+//输出数字字符，非数字字符不输出
+//#include<stdio.h>
+//int ch = 0;
+//int main()
+//{
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ch > '0' || ch < '9')
+//			continue;
+//		else
+//			putchar(ch);
+//	}
+//	return 0;
+//}
