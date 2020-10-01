@@ -1,0 +1,39 @@
+////接受一个整型值（无符号），按照顺序打印它的每一位，如；输入1234，打印，1 2 3 4
+//#include<stdio.h>
+//void print(int n)
+//{
+//	if (n > 9)  //if n = 123
+//	{
+//		print(n / 10);
+//	}
+//	printf("%d " ,n%10);
+//}
+//
+//int main()
+//{
+//	
+//	unsigned int num = 0;
+//	scanf("%d" , &num);
+//	print(num);
+//	return 0;
+//}
+
+//练习二，自定义函数，不许创建零时变量，来计算字符串的长度
+//#include<stdio.h>
+//int my_len(char * str)
+//{
+//	if (*str != '\0')
+//	{
+//		return 1 + my_len(str + 1);
+//	}
+//	else
+//		return 0;
+//		
+//}
+//int main()
+//{
+//	char arr[] = "abcde";
+//	int len =  my_len(arr);
+//	printf("%d" ,len);
+//	return 0;
+//}
