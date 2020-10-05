@@ -1,0 +1,97 @@
+# my-C-code
+daily-C-code
+//game.h
+#define _CRT_SECURE_NO_WARNINGS
+#define ROW 3
+#define COL 3
+void Initborad(char board[ROW][COL], int row, int col)
+void Displayboard(char board[ROW][COL], int row, int col);
+
+//game.c
+#define _CRT_SECURE_NO_WARNINGS
+#include"game.h"
+#include<stdio.h>
+void Initboard(int board[ROW][COL], int row, int col)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			board[i][j] = ' ';
+		}
+
+	}
+	
+}
+void Displayboard(char board[ROW][COL], int row, int col)
+{
+	int i = 0;
+	for (i = 0; i < row; i++)
+	{
+		//1.打印一行的数据
+		printf(" %c | %c | %c \n" ,board[i][0] ,board[i][1] ,board[i][2]);
+		// 2.打印分隔行
+		if (i<row-1)
+		printf("---|---|---\n");
+	}
+}
+
+
+//text.c
+//打印棋盘
+#define _CRT_SECURE_NO_WARNINGS
+#include"game.h"
+#include<stdio.h>
+void menu()
+{
+	printf("***************************\n");
+	printf("***0. exit    1 . play  ***\n");
+	printf("***************************\n");
+}
+//游戏的算法实现
+void game()
+{
+	//数组-存放玩家与电脑走出的棋盘信息
+	char board[ROW][COL] = {0};  //希望棋盘上一开始什么都没有打印-空格
+	Initboard(board, ROW, COL);    //初始化棋盘,函数申明
+	Displayboard(board, ROW, COL);
+}
+void text()
+{
+	int input = 0;
+	do
+	{
+		menu();
+		{
+			printf("请选择：\n");
+			scanf("%d" , &input );
+			switch(input)
+			{
+			case 1:
+				{
+					  game();
+					break;
+				}
+			case 0:
+			{
+					  printf("退出游戏");
+					  break;
+			}
+			default:
+			{
+					   printf("输入有误，请重新输入：");
+					   break;
+			}
+			}
+		
+		}
+	} while (input);
+}
+int main()
+{
+	text();
+	return 0;
+
+}
