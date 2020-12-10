@@ -1,0 +1,11 @@
+﻿生成启动时间为 2020/12/10 13:26:42。
+     1>项目“d:\users\administrator\documents\visual studio 2013\Projects\12_10\12_10\12_10.vcxproj”在节点 2 上(ClCompile 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt 1.c
+         1.c
+     1>1.c(8): error C2040: “n”:“char *”与“int”的间接寻址级别不同
+     1>已完成生成项目“d:\users\administrator\documents\visual studio 2013\Projects\12_10\12_10\12_10.vcxproj”(ClCompile 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.08
