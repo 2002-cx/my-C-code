@@ -1,0 +1,56 @@
+#include<stdio.h>
+//二维数组传参
+
+//1:void test(int arr[3][5])
+//{
+//	 
+//}
+//2:void test(int arr[][])//二维数组中，行可以省--但列不可省
+//{
+//
+//}
+//3:void test(int(*arr)[5])
+//{
+//
+//}
+//int main()
+//{
+//	int arr[3][5] = {0};
+//	test(arr);
+//	return 0;
+//} 
+
+//指针传参，拿指针接收
+
+
+//函数指针--指向函数的指针
+//#include<stdio.h>
+//int Add(int x, int y)
+//{
+//	int z = x + y;
+//	return z;
+//}
+//int main()
+//{
+//	int a = 1;
+//	int b = 2;
+//	//printf("%d\n", Add(a, b));
+//	printf("%p\n",&Add);//打印函数的地址
+//	printf("%p\n", Add);//&函数名==函数名--都为函数地址
+//	//存放函数地址
+//	int (*p)(int ,int) = Add;//两个int 为函数中参数的类型--(*p)为指向函数的指针	
+//	printf("%d\n",(*p)(2,3));//调用函数
+//	return 0;
+//}
+
+#include<stdio.h>
+void print(char *str)
+{
+	printf("%s\n",str);
+}
+int main()
+{
+	void (*p)(char *) = print;
+	(*p)("jj");
+	return 0;
+}
