@@ -11,10 +11,15 @@ typedef struct Stack {
 	Pnode top;
 	Pnode buttom;
 }Stack,*Pstack;
+//初始化栈
 void init_s(Pstack);
+//进栈
 void push_s(Pstack, int);
+//遍历栈
 void traverse(Pstack);
+//出栈
 void pop_s(Pstack);
+//清空栈
 void clear_s(Pstack);
 int main() {
 	//栈
