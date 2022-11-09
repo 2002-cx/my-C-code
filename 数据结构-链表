@@ -1,0 +1,97 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+typedef struct Node {
+	int data;
+	struct Node* pnext;
+}Node, * Pnode;
+Pnode create_link();
+void traverse_link(Pnode);
+//链表的插入
+void insert_link(Pnode, int, int);
+void delete_link(Pnode, int);
+int main() {
+	Pnode head = NULL;
+	head = create_link();
+	traverse_link(head);
+	insert_link(head,3,22);
+	traverse_link(head);
+	delete_link(head, 3);
+	traverse_link(head);
+	return 0;
+}
+void delete_link(Pnode head, int pos) {
+	Pnode p = head;
+	int i = 0;
+	int val;
+	while (i < pos - 1 && p != NULL)
+	{
+		i++;
+		p = p->pnext;
+	}
+	Pnode r = p->pnext;
+	val = r->data;
+	p->pnext = r->pnext;
+	free(r);
+	r = NULL;
+	printf("删除链表成功!元素为:%d\n",val);
+}
+void insert_link(Pnode head, int pos, int val)
+{
+	int i = 0;
+	Pnode p = head;
+	while (i < pos - 1 && p != NULL)
+	{
+		i++;
+		p = p->pnext;
+	}
+	Pnode Pnew = (Pnode)malloc(sizeof(Node));
+	Pnew->data = val;
+	Pnode q= p->pnext;
+	p->pnext = Pnew;
+	Pnew->pnext = q;
+}
+void traverse_link(Pnode p) {
+	Pnode r = p->pnext;
+	while (r != NULL) {
+		printf("%d\t", r->data);
+		r = r->pnext;
+	}
+	printf("\n");
+}
+Pnode create_link() {
+	Pnode head = (Pnode)malloc(sizeof(Node));
+	if (NULL == head)
+	{
+		printf("动态内存分配失败\n");
+		exit(-1);
+	}
+	else {
+		Pnode tail = head;
+		tail->pnext = NULL;
+		int len, i, val;
+		printf("请输入链表长度:");
+		scanf("%d", &len);
+		for (i = 0; i < len; i++)
+		{
+
+			Pnode Pnew = (Pnode)malloc(sizeof(Node));
+			if (NULL == Pnew)
+			{
+				printf("动态内存分配失败\n");
+				exit(-1);
+			}
+			else {
+				printf("请输入第%d个链表的值:", i + 1);
+				scanf("%d", &val);
+				Pnew->data = val;
+				tail->pnext = Pnew;
+				Pnew->pnext = NULL;
+				tail = Pnew;
+			}
+
+		}
+		return head;
+	}
+}
