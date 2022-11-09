@@ -6,10 +6,13 @@ typedef struct Node {
 	int data;
 	struct Node* pnext;
 }Node, * Pnode;
+//创建链表
 Pnode create_link();
+//遍历链表
 void traverse_link(Pnode);
 //链表的插入
 void insert_link(Pnode, int, int);
+//链表的删除
 void delete_link(Pnode, int);
 int main() {
 	Pnode head = NULL;
