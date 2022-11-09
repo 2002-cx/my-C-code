@@ -1,0 +1,105 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+//定义一个结构体的链表
+typedef struct Node {
+	int data;
+	struct Node* pnext;
+}Node,*Pnode;
+//定义一个结构体栈
+typedef struct Stack {
+	Pnode top;
+	Pnode buttom;
+}Stack,*Pstack;
+void init_s(Pstack);
+void push_s(Pstack, int);
+void traverse(Pstack);
+void pop_s(Pstack);
+void clear_s(Pstack);
+int main() {
+	//栈
+	Stack s;
+	init_s(&s);
+	push_s(&s,1);
+	push_s(&s, 2);
+	push_s(&s, 3);
+	traverse(&s);
+	pop_s(&s);
+	traverse(&s);
+	clear_s(&s);
+	traverse(&s);
+	push_s(&s, 3);
+	traverse(&s);
+	return 0;
+}
+//清空栈
+void clear_s(Pstack s)
+{
+	
+	while (s->buttom != s->top)
+	{
+		Pnode a = s->top;
+		s->top = a->pnext;
+		free(a);
+		a = NULL;
+	}
+	s->buttom = s->top;
+	printf("清空栈成功!\n");
+}
+//出栈
+void pop_s(Pstack p)
+{
+	int val;
+	if (p->buttom != p->top)
+	{
+		Pnode a = p->top;
+		val = a->data;
+		p->top = a->pnext;
+		printf("出栈成功，元素为:%d\n",val);
+		free(a);
+		a = NULL;
+	}
+	else {
+		printf("栈为空!\n");
+	}
+}
+//遍历栈
+void traverse(Pstack p)
+{
+	Pnode a = p->top;
+	while (a != p->buttom)
+	{
+		printf("%d\t",a->data);
+		a = a->pnext;
+	}
+	printf("\n");
+}
+//进栈
+void push_s(Pstack p, int val)
+{
+	Pnode Pnew = (Pnode)malloc(sizeof(Node));
+	if (Pnew == NULL)
+	{
+		printf("动态内存分配失败!\n");
+		exit(-1);
+	}
+	else {
+		Pnew->data = val;
+		Pnew->pnext = p->top;
+		p->top = Pnew;
+	}
+}
+//初始化栈
+void init_s(Pstack p)
+{
+	p->top = (Pnode)malloc(sizeof(Node));
+	if (NULL == p->top)
+	{
+		printf("动态内存分配失败\n");
+		exit(-1);
+	}
+	else {
+		p->buttom = p->top;
+		p->top->pnext = NULL;
+	}
+}
